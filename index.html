@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Финансовый трекер</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Финансовый трекер</h1>
+      <p class="subtitle">Отслеживайте ваши доходы и расходы</p>
+    </header>
+
+    <main>
+      <section class="form-container">
+        <h2>Добавить операцию</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Название</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Например: Покупка продуктов"
+            />
+          </div>
+          <div class="form-group">
+            <label for="amount">Сумма</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="0"
+              min="0"
+              step="0.01"
+            />
+          </div>
+          <div class="form-group">
+            <label for="date">Дата</label>
+            <input type="date" id="date" min="1900-01-01" max="2100-12-31" />
+          </div>
+          <div class="form-group">
+            <label for="category">Категория</label>
+            <select id="category">
+              <option value="Расход">Расход</option>
+              <option value="Доход">Доход</option>
+            </select>
+          </div>
+        </div>
+        <button id="add-button">Добавить</button>
+      </section>
+
+      <section class="operations-container">
+        <div class="operations-header">
+          <h2>Список операций</h2>
+          <div>
+            <span>Итого: </span>
+            <span id="total-amount"></span>
+            <div class="filters">
+              <div class="form-group">
+                <label for="month">Фильтр по месяцу</label>
+                <input type="month" id="month" />
+              </div>
+              <div class="form-group">
+                <label for="category-filter">Фильтр по категории</label>
+                <select id="category-filter">
+                  <option value="all">Все</option>
+                  <option value="Доход">Доход</option>
+                  <option value="Расход">Расход</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="operations-list" id="operations-list"></ul>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
